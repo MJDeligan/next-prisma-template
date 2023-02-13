@@ -40,3 +40,4 @@ env.local
 .env
 cypress/screenshots
 cypress/videos
+logs
