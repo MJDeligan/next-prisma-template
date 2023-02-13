@@ -2,9 +2,11 @@ import { Session } from "next-auth";
 import { JWT } from "next-auth/jwt";
 /// <reference types="cypress" />
 
-declare namespace Cypress {
-  interface Chainable<Subject = any> {
-    loginByGoogleApi(): Chainable<any>;
+declare global {
+  namespace Cypress {
+    interface Chainable<Subject = any> {
+      loginByGoogleApi(): Chainable<any>;
+    }
   }
 }
 
