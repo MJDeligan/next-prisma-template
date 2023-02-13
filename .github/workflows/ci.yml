@@ -51,4 +51,4 @@ jobs:
           GOOGLE_ID: ${{ secrets.GOOGLE_ID }}
           GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-          DATABASE_URL: postgresql://postgres:postgres@localhost:54322/postgres
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
