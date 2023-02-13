@@ -34,9 +34,9 @@ jobs:
         run: npx prisma migrate dev
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
-      - name: Install prisma client
+      - name: Generate client
         working-directory: ./src
-        run: npm i @prisma/client
+        run: npx prisma generate
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
       - name: Cypress run
