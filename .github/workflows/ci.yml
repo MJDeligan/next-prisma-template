@@ -34,7 +34,7 @@ jobs:
         run: npx prisma migrate dev
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
-      -name: Install prisma client
+      - name: Install prisma client
         working-directory: ./src
         run: npm i @prisma/client
         env:
