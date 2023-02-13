@@ -1,10 +1,14 @@
-import './globals.css'
+import SigninButton from "@/components/SigninButton";
+import SignoutButton from "@/components/SignoutButton";
+import { getSession } from "@/lib/auth";
+import "./globals.css";
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
+  const session = await getSession();
   return (
     <html lang="en">
       {/*
@@ -12,7 +16,15 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <header className="shadow-md flex">
+          <div className="ml-auto flex">
+            {session && <SignoutButton />}
+            {!session && <SigninButton />}
+          </div>
+        </header>
+        {children}
+      </body>
     </html>
-  )
+  );
 }
