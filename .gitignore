@@ -38,3 +38,5 @@ cypress.env.json
 .vscode
 env.local
 .env
+cypress/screenshots
+cypress/videos
