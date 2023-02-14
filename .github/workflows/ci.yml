@@ -34,6 +34,11 @@ jobs:
         run: npx prisma migrate dev
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      - name: Prisma generate
+        working-directory: ./src
+        run: npx prisma generate
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
