@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "node src/server.js",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production node src/server.js | pino-tee error ./logs",
+    "start": "cross-env NODE_ENV=production node src/server.js",
+    "start-dev": "cross-env NODE_ENV=production node src/server.js | pino-tee info ./logs",
     "lint": "next lint"
   },
   "dependencies": {
