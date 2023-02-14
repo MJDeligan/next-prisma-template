@@ -4,7 +4,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { prisma } from "./prisma";
 import GoogleProvider from "next-auth/providers/google";
-import { Role } from "@prisma/client";
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -18,14 +17,13 @@ export const authOptions: NextAuthOptions = {
           name: profile.given_name + " " + profile.family_name,
           email: profile.email,
           image: profile.picture,
-          role: Role.USER,
         };
       },
     }),
   ],
   callbacks: {
     jwt({ token, user }) {
-      if (user) token.role = user.role;
+      // if (user) token.role = user.role;
       return token;
     },
     session({ session, token }) {
@@ -64,7 +62,7 @@ export const withAuthenticationRequired = (
 };
 
 export const withRequiredRole = (
-  requiredRole: Role,
+  requiredRole: string,
   handler: (req: NextApiRequest, res: NextApiResponse) => unknown
 ) => {
   return async (req: NextAPIRequestWithLogger, res: NextApiResponse) => {
