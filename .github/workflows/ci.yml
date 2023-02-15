@@ -34,6 +34,8 @@ jobs:
       - name: Prisma setup
         working-directory: ./src
         run: npx prisma db push --preview-feature
+      - name: Setup env file for prisma
+        run: echo DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres > .env
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
