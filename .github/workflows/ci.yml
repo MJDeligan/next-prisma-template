@@ -57,10 +57,9 @@ jobs:
       - name: Run cypress
         run: npx cypress run
         env:
-          # CYPRESS_GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_ID }}
-          # CYPRESS_GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
-          # CYPRESS_GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-          CYPRESS_GOOGLE_CLIENT_ID: ${{ secrets.LEAK_TEST }}
+          CYPRESS_GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_ID }}
+          CYPRESS_GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
+          CYPRESS_GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
           CYPRESS_COOKIE_NAME: next-auth.session-token
           CYPRESS_BASE_URL: http://localhost:3000
       # - name: Cypress run
