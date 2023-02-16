@@ -64,30 +64,3 @@ enum Role {
 }
 
 // --------------Next Auth---------------------
-
-model Post {
-  id    Int    @id @default(autoincrement())
-  title String
-}
-
-model Question {
-  id      Int      @id @default(autoincrement())
-  text    String
-  answers Answer[]
-  Quiz    Quiz     @relation(fields: [quizId], references: [id])
-  quizId  Int
-}
-
-model Answer {
-  id         Int      @id @default(autoincrement())
-  text       String
-  question   Question @relation(fields: [questionId], references: [id])
-  questionId Int
-  isCorrect  Boolean
-}
-
-model Quiz {
-  id        Int        @id @default(autoincrement())
-  title     String
-  questions Question[]
-}

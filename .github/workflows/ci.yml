@@ -32,7 +32,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Prisma setup
-        working-directory: ./src
         run: npx prisma db push --preview-feature
       - name: Start application
         run: npm run dev & sleep 10
