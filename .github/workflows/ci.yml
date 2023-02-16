@@ -37,7 +37,7 @@ jobs:
       - name: Setup env file for prisma
         run: echo DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres > .env
       - name: Start application
-        run: npm run dev
+        run: npm run dev % sleep 10
         env:
           HOST_URL: "localhost"
           HOST_PORT: "3000"
