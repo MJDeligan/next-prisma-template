@@ -41,3 +41,4 @@ env.local
 cypress/screenshots
 cypress/videos
 logs
+.log
