@@ -12,13 +12,16 @@ declare global {
 
 declare module "next-auth" {
   interface Session {
-    user?: DefaultUser & { id: string };
+    user?: DefaultUser & { id: string; role: string };
   }
-  interface User extends DefaultUser {}
+  interface User extends DefaultUser {
+    role: string;
+  }
 }
 
 declare module "next-auth/jwt" {
   interface JWT {
     id: string;
+    role: string;
   }
 }
