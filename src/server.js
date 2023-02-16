@@ -10,7 +10,7 @@ const dev = process.env.NODE_ENV !== "production";
 
 const app = next({
   dev,
-  hostname: dev ? "localhost" : process.env.HOST_URL,
+  hostname: dev ? "localhost" : process.env.HOST_NAME,
   port: dev ? 3000 : process.env.HOST_PORT,
 });
 

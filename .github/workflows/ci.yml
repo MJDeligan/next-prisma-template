@@ -39,7 +39,7 @@ jobs:
       - name: Start application
         run: npm run dev & sleep 10
         env:
-          HOST_URL: "localhost"
+          HOST_NAME: "localhost"
           HOST_PORT: "3000"
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
           NEXTAUTH_URL: "http://localhost:3000"
