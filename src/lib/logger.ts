@@ -1,6 +1,6 @@
 import { NextAPIRequestWithLogger } from "@/types";
-import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
-import pino, { Logger } from "pino";
+import { NextApiResponse } from "next";
+import pino from "pino";
 
 const productionLogLevel = process.env.PRODUCTION_LOG_LEVEL || "error";
 const logLevel =
@@ -17,13 +17,13 @@ const transport = pino.transport({
   ],
 });
 
-const logger = pino(transport);
+const serverLogger = pino(transport);
 
 export const withLogger = (
   handler: (req: NextAPIRequestWithLogger, res: NextApiResponse) => unknown
 ) => {
   return async (req: NextAPIRequestWithLogger, res: NextApiResponse) => {
-    req.log = logger.child({
+    req.log = serverLogger.child({
       requestId: req.headers["x-request-id"],
       url: req.url,
       method: req.method,
