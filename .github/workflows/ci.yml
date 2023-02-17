@@ -36,8 +36,6 @@ jobs:
       - name: Start application
         run: npm run dev & sleep 10
         env:
-          HOST_NAME: "localhost"
-          HOST_PORT: "3000"
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
           NEXTAUTH_URL: "http://localhost:3000"
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
@@ -59,14 +57,3 @@ jobs:
           CYPRESS_GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
           CYPRESS_COOKIE_NAME: next-auth.session-token
           CYPRESS_BASE_URL: http://localhost:3000
-      # - name: Cypress run
-      #   uses: cypress-io/github-action@v3
-      #   with:
-      #     browser: chrome
-      #     wait-on: "http://localhost:3000"
-      #   env:
-      #     CYPRESS_GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_ID }}
-      #     CYPRESS_GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
-      #     CYPRESS_GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-      #     CYPRESS_COOKIE_NAME: next-auth.session-token
-      #     CYPRESS_BASE_URL: http://localhost:3000
