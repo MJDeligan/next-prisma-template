@@ -21,6 +21,10 @@ A .env and/or .env.local file need to be created in the root directory. The foll
 - **GOOGLE_SECRET**: See previous
 - **DATABASE_URL**: See [https://www.prisma.io/docs/reference/database-reference/connection-urls#postgresql](https://www.prisma.io/docs/reference/database-reference/connection-urls#postgresql)
 
+Optional:
+
+- **PRODUCTION_LOG_LEVEL**: Loglevel to use when deploying in production mode. See [Pino docs](https://github.com/pinojs/pino/blob/master/docs/api.md#level-string)
+
 For Cypress, a cypress.env.json is required with the following values:
 
 - **GOOGLE_CLIENT_ID**: See GOOGLE_ID
