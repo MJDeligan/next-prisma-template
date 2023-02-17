@@ -39,8 +39,8 @@ jobs:
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
           NEXTAUTH_URL: "http://localhost:3000"
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_ID }}
-          GOOGLE_ID: ${{ secrets.GOOGLE_ID }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
       - name: Request backend
@@ -52,7 +52,7 @@ jobs:
       - name: Run cypress
         run: npx cypress run
         env:
-          CYPRESS_GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_ID }}
+          CYPRESS_GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           CYPRESS_GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
           CYPRESS_GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
           CYPRESS_COOKIE_NAME: next-auth.session-token

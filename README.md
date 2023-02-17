@@ -18,7 +18,7 @@ A .env and/or .env.local file need to be created in the root directory. The foll
 - **NEXTAUTH_URL**: See [https://next-auth.js.org/configuration/options#nextauth_url](https://next-auth.js.org/configuration/options#nextauth_url)
 - **NEXTAUTH_SECRET**: See [https://next-auth.js.org/configuration/options#nextauth_secret](https://next-auth.js.org/configuration/options#nextauth_secret)
 
-- **GOOGLE_ID**: See [https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid)
+- **GOOGLE_CLIENT_ID**: See [https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid)
 - **GOOGLE_SECRET**: See previous
 - **DATABASE_URL**: See [https://www.prisma.io/docs/reference/database-reference/connection-urls#postgresql](https://www.prisma.io/docs/reference/database-reference/connection-urls#postgresql)
 
@@ -28,9 +28,16 @@ Optional:
 
 For Cypress, a cypress.env.json is required with the following values:
 
-- **GOOGLE_CLIENT_ID**: See GOOGLE_ID
+- **GOOGLE_CLIENT_ID**: See GOOGLE_CLIENT_ID
 - **GOOGLE_SECRET**: See GOOGLE_SECRET
 - **REFRESH_TOKEN**: You can generate a refresh token using [Google Oauth Playground](https://developers.google.com/oauthplayground/). You can use the Google Oauth2 API v2 to generate an access and refresh token. Make sure to configure the playground to use your own credentials in the settings.
+
+Also set these as repository secrets for the e2e-ci-job to work:
+
+- **GOOGLE_CLIENT_ID**
+- **GOOGLE_SECRET**
+- **REFRESH_TOKEN**
+- **NEXTAUTH_SECRET**
 
 ---
 
