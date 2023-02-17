@@ -4,6 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 This is a template for [Nextjs](https://nextjs.org/). It includes the following libraries:
 
+- [NextAuth](https://next-auth.js.org/)
 - [Prisma](https://prisma.io/) ORM
 - [TailwindCSS](https://tailwindcss.com/) for sytles
 - [Pinojs](https://github.com/pinojs/pino) for logging
@@ -30,6 +31,12 @@ For Cypress, a cypress.env.json is required with the following values:
 - **GOOGLE_CLIENT_ID**: See GOOGLE_ID
 - **GOOGLE_SECRET**: See GOOGLE_SECRET
 - **REFRESH_TOKEN**: You can generate a refresh token using [Google Oauth Playground](https://developers.google.com/oauthplayground/). You can use the Google Oauth2 API v2 to generate an access and refresh token. Make sure to configure the playground to use your own credentials in the settings.
+
+---
+
+> _Note_:
+
+## By default the project is setup to use a Postgres database. If you want to use a different database, you need to override the provider for the datasource in `/prisma/schema.prisma`. Check out [Prisma data source docs](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#datasource) for more.
 
 ## Getting Started
 
