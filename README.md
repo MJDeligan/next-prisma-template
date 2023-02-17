@@ -1,5 +1,32 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Overview
+
+This is a template for [Nextjs](https://nextjs.org/). It includes the following libraries:
+
+- [Prisma](https://prisma.io/) ORM
+- [TailwindCSS](https://tailwindcss.com/) for sytles
+- [Pinojs](https://github.com/pinojs/pino) for logging
+- [Cypress](https://www.cypress.io/) for e2e testing
+- [Zod:heart:](https://zod.dev/) for models definition and validation
+
+## Configuration
+
+A .env and/or .env.local file need to be created in the root directory. The following values must be configured:
+
+- **NEXTAUTH_URL**: See [https://next-auth.js.org/configuration/options#nextauth_url](https://next-auth.js.org/configuration/options#nextauth_url)
+- **NEXTAUTH_SECRET**: See [https://next-auth.js.org/configuration/options#nextauth_secret](https://next-auth.js.org/configuration/options#nextauth_secret)
+
+- **GOOGLE_ID**: See [https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid)
+- **GOOGLE_SECRET**: See previous
+- **DATABASE_URL**: See [https://www.prisma.io/docs/reference/database-reference/connection-urls#postgresql](https://www.prisma.io/docs/reference/database-reference/connection-urls#postgresql)
+
+For Cypress, a cypress.env.json is required with the following values:
+
+- **GOOGLE_CLIENT_ID**: See GOOGLE_ID
+- **GOOGLE_SECRET**: See GOOGLE_SECRET
+- **REFRESH_TOKEN**: You can generate a refresh token using [Google Oauth Playground](https://developers.google.com/oauthplayground/). You can use the Google Oauth2 API v2 to generate an access and refresh token. Make sure to configure the playground to use your own credentials in the settings.
+
 ## Getting Started
 
 First, run the development server:
