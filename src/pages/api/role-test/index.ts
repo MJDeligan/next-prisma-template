@@ -1,4 +1,4 @@
-import { withRequiredRole } from "@/lib/auth";
+import { withRequiredRole } from "@/lib/serverAuth";
 import { Role } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 

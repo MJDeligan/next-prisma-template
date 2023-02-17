@@ -1,4 +1,4 @@
-import { withAuthenticationRequired } from "@/lib/auth";
+import { withAuthenticationRequired } from "@/lib/serverAuth";
 import { NextApiRequest, NextApiResponse } from "next";
 
 function handler(req: NextApiRequest, res: NextApiResponse) {
