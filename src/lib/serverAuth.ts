@@ -1,12 +1,12 @@
 import { NextApiRequestWithLogger } from "@/types";
 import { Role } from "@prisma/client";
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./auth";
 import { withLogger } from "./logger";
 
 export const withAuthenticationRequired = (
-  handler: (req: NextApiRequest, res: NextApiResponse) => unknown
+  handler: (req: NextApiRequestWithLogger, res: NextApiResponse) => unknown
 ) => {
   return withLogger(
     async (req: NextApiRequestWithLogger, res: NextApiResponse) => {
@@ -24,7 +24,7 @@ export const withAuthenticationRequired = (
 
 export const withRequiredRole = (
   requiredRole: Role,
-  handler: (req: NextApiRequest, res: NextApiResponse) => unknown
+  handler: (req: NextApiRequestWithLogger, res: NextApiResponse) => unknown
 ) => {
   return withLogger(
     async (req: NextApiRequestWithLogger, res: NextApiResponse) => {

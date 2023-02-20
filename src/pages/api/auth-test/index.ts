@@ -1,7 +1,8 @@
 import { withAuthenticationRequired } from "@/lib/serverAuth";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequestWithLogger } from "@/types";
+import type { NextApiResponse } from "next";
 
-function handler(req: NextApiRequest, res: NextApiResponse) {
+function handler(req: NextApiRequestWithLogger, res: NextApiResponse) {
   return res.status(200).json({ message: "Success" });
 }
 
