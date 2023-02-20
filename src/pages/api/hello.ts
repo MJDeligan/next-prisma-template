@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { withLogger } from "@/lib/logger";
-import { NextAPIRequestWithLogger } from "@/types";
+import { NextApiRequestWithLogger } from "@/types";
 import type { NextApiResponse } from "next";
 
 type Data = {
@@ -8,7 +8,7 @@ type Data = {
 };
 
 export default withLogger(function handler(
-  req: NextAPIRequestWithLogger,
+  req: NextApiRequestWithLogger,
   res: NextApiResponse<Data>
 ) {
   req.log.info("Test");

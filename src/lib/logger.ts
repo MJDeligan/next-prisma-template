@@ -1,9 +1,9 @@
-import { NextAPIRequestWithLogger } from "@/types";
+import { NextApiRequestWithLogger } from "@/types";
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import pino from "pino";
 
 type NextApiHandlerWithLogger = (
-  req: NextAPIRequestWithLogger,
+  req: NextApiRequestWithLogger,
   res: NextApiResponse
 ) => unknown;
 
@@ -28,7 +28,7 @@ export const withLogger = (
   handler: NextApiHandlerWithLogger
 ): NextApiHandler => {
   return async (req: NextApiRequest, res: NextApiResponse) => {
-    const newReq = req as NextAPIRequestWithLogger;
+    const newReq = req as NextApiRequestWithLogger;
     newReq.log = serverLogger.child({
       requestId: req.headers["x-request-id"],
       url: req.url,

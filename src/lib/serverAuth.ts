@@ -1,4 +1,4 @@
-import { NextAPIRequestWithLogger } from "@/types";
+import { NextApiRequestWithLogger } from "@/types";
 import { Role } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
@@ -9,7 +9,7 @@ export const withAuthenticationRequired = (
   handler: (req: NextApiRequest, res: NextApiResponse) => unknown
 ) => {
   return withLogger(
-    async (req: NextAPIRequestWithLogger, res: NextApiResponse) => {
+    async (req: NextApiRequestWithLogger, res: NextApiResponse) => {
       const session = await getServerSession(req, res, authOptions);
       if (!session) {
         req.log.warn("Unauthenticated tried accessing secured api route");
@@ -27,7 +27,7 @@ export const withRequiredRole = (
   handler: (req: NextApiRequest, res: NextApiResponse) => unknown
 ) => {
   return withLogger(
-    async (req: NextAPIRequestWithLogger, res: NextApiResponse) => {
+    async (req: NextApiRequestWithLogger, res: NextApiResponse) => {
       const session = await getServerSession(req, res, authOptions);
       req.log.info(session);
       if (!session) {
